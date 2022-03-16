@@ -1,0 +1,15 @@
+<template>
+    <div class="card_wrapper">
+        <div class="flex-container droparea" ondragover={cancel} ondragenter={cancel} ondrop={handleDragComplete}>
+            <template for:each={stageList.data} for:item="stage" for:index="index">
+                    <div class="stageContainer" key={stage} draggable="true" ondragstart={handleDragStart} data-stage={stage.Name} data-id={stage.Stage_Rank__c} >
+                        <h1 class="column_heading" data-stage={stage.Name} data-id={stage.Stage_Rank__c}>{stage.Name} </h1>
+                        <c-drag-and-drop-list project={projectList.data} stg={stage.Name}
+                        onlistitemdrag={handleListItemDrag}
+                        onitemdrop={handleItemDrop}
+                        ></c-drag-and-drop-list>             
+                    </div>
+            </template>    
+        </div>
+    </div>
+</template>

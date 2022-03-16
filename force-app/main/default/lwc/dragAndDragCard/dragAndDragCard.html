@@ -1,0 +1,17 @@
+<template>
+    <template if:true={isSameStage} >
+        <li class="slds-item slds-var-m-around_small" draggable="true" ondragstart={itemDragStart}
+        >
+            <article class="slds-tile slds-tile_board">
+                <h3 class="slds-truncate" title={record.Name}>
+                    <a href="#" data-id={record.Id} onclick={navigateOppHandler}>
+                        <span class="slds-truncate" data-id={record.Id} data-rank={record.Project_Rank__c}>
+                            {record.Name}
+                        </span>
+                    </a>
+                </h3>
+                
+            </article>
+        </li>
+    </template>
+</template>
